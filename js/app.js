@@ -25,6 +25,7 @@ const sessionSide = document.getElementById("session-side");
 const sessionHold = document.getElementById("session-hold");
 const sessionTotal = document.getElementById("session-total");
 const sessionNext = document.getElementById("session-next");
+const sessionCue = document.getElementById("session-cue");
 const sessionEasier = document.getElementById("session-easier");
 const sessionCaution = document.getElementById("session-caution");
 const btnPause = document.getElementById("btn-pause");
@@ -96,6 +97,7 @@ function handleStep(step, index, prevStep) {
   poseImage.src = poseUrl(step.poseId);
   poseImage.alt = step.name;
   poseFrame.classList.toggle("flip", step.side === "left");
+  sessionCue.textContent = step.cue || "";
 
   if (step.easier) {
     sessionEasier.hidden = false;

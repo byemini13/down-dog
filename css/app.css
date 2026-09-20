@@ -180,8 +180,8 @@ body::before {
 
 .screen-session {
   display: grid;
-  grid-template-rows: auto minmax(13.5rem, 38vh) 1fr auto;
-  gap: 0.55rem;
+  grid-template-rows: auto minmax(15rem, 42vh) 1fr auto;
+  gap: 0.45rem;
   padding-left: 0;
   padding-right: 0;
 }
@@ -281,10 +281,18 @@ body::before {
   white-space: nowrap;
 }
 
+.cue {
+  margin: 0.45rem 0 0;
+  max-width: 36ch;
+  font-size: 1.02rem;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
 .hold-clock {
-  margin: 0.55rem 0 0;
+  margin: 0.45rem 0 0;
   font-family: var(--display);
-  font-size: clamp(4.2rem, 20vw, 6.4rem);
+  font-size: clamp(3.2rem, 15vw, 4.8rem);
   font-weight: 560;
   line-height: 0.85;
   letter-spacing: -0.04em;

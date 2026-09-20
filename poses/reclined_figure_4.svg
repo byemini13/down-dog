@@ -1,8 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" fill="none"><line x1="16" y1="176" x2="224" y2="176" stroke="oklch(0.32 0.045 50)" stroke-width="1.6" opacity="0.3"/><g stroke="oklch(0.32 0.045 50)" fill="none" stroke-width="5.8" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="24" cy="112" r="10" fill="oklch(0.32 0.045 50)" stroke="none"/>
-      <path d="M36 118 L112 140"/>
-      <path d="M112 140 L132 48"/>
-      <path d="M132 48 L78 86"/>
-      <path d="M112 140 L186 128 L138 92"/>
-      <path d="M50 116 L118 64"/>
-    </g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 210" fill="none"><rect x="16" y="180" width="228" height="16" rx="8" fill="oklch(0.30 0.048 50 / 0.10)"/><g stroke-linecap="round" stroke-linejoin="round"><line x1="130" y1="122" x2="204" y2="148" stroke="oklch(0.30 0.048 50 / 0.30)" stroke-width="16.5"/><line x1="204" y1="148" x2="148" y2="96" stroke="oklch(0.30 0.048 50 / 0.30)" stroke-width="14"/><line x1="130" y1="56" x2="130" y2="122" stroke="oklch(0.30 0.048 50)" stroke-width="22"/><line x1="102" y1="58" x2="86" y2="88" stroke="oklch(0.30 0.048 50)" stroke-width="12.5"/><line x1="86" y1="88" x2="104" y2="78" stroke="oklch(0.30 0.048 50)" stroke-width="12.5"/><line x1="158" y1="58" x2="118" y2="74" stroke="oklch(0.30 0.048 50)" stroke-width="12.5"/><line x1="130" y1="122" x2="88" y2="82" stroke="oklch(0.30 0.048 50)" stroke-width="16.5"/><line x1="88" y1="82" x2="128" y2="68" stroke="oklch(0.30 0.048 50)" stroke-width="14"/><circle cx="130" cy="34" r="13.5" fill="oklch(0.30 0.048 50)" stroke="none"/></g></svg>

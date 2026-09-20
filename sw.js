@@ -1,4 +1,4 @@
-const CACHE = "downdog-v3";
+const CACHE = "downdog-v4";
 
 const ASSETS = [
   "./",

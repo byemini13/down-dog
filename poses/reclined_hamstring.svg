@@ -1,7 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" fill="none"><line x1="16" y1="176" x2="224" y2="176" stroke="oklch(0.32 0.045 50)" stroke-width="1.6" opacity="0.3"/><g stroke="oklch(0.32 0.045 50)" fill="none" stroke-width="5.8" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="22" cy="108" r="10" fill="oklch(0.32 0.045 50)" stroke="none"/>
-      <path d="M34 116 L120 142"/>
-      <path d="M120 142 L222 150"/>
-      <path d="M120 142 L132 36"/>
-      <path stroke-width="3" d="M52 112 L124 58 L132 36"/>
-    </g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 210" fill="none"><rect x="16" y="180" width="228" height="16" rx="8" fill="oklch(0.30 0.048 50 / 0.10)"/><g stroke-linecap="round" stroke-linejoin="round"><line x1="122" y1="148" x2="232" y2="156" stroke="oklch(0.30 0.048 50 / 0.30)" stroke-width="16.5"/><line x1="48" y1="122" x2="122" y2="148" stroke="oklch(0.30 0.048 50)" stroke-width="22"/><line x1="122" y1="148" x2="136" y2="40" stroke="oklch(0.30 0.048 50)" stroke-width="16.5"/><line x1="62" y1="120" x2="128" y2="70" stroke="oklch(0.30 0.048 50)" stroke-width="12.5"/><line x1="128" y1="70" x2="136" y2="40" stroke="oklch(0.30 0.048 50)" stroke-width="4"/><circle cx="30" cy="112" r="13.5" fill="oklch(0.30 0.048 50)" stroke="none"/></g></svg>
