@@ -1,0 +1,30 @@
+{
+  "name": "Down Dog",
+  "short_name": "Down Dog",
+  "description": "Eighteen-minute hip and back holds.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ead9c3",
+  "theme_color": "#ead9c3",
+  "icons": [
+    {
+      "src": "./icons/icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
+    }
+  ]
+}

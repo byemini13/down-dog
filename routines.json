@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "total_sec_per_routine": 1080,
+    "stretch_sec": 960,
+    "meditation_sec": 120,
+    "hold_range_sec": [
+      90,
+      110
+    ],
+    "notes": "hold_sec_per_side includes side-switch and setup transition time, so total stays exactly 18:00."
+  },
+  "routines": [
+    {
+      "id": "hip_opener",
+      "name": "Hip Opener",
+      "description": "Deep hip release, working outer hips, front hips and glutes.",
+      "total_sec": 1080,
+      "stretches": [
+        {
+          "id": "reclined_figure_4",
+          "name": "Reclined Figure-4",
+          "sides": [
+            "left",
+            "right"
+          ],
+          "hold_sec_per_side": 90,
+          "cue": "Lie on your back, knees bent. Cross right ankle over left thigh. Draw the left thigh toward your chest until you feel the outer right hip. Keep your head and shoulders down.",
+          "easier_option": "Keep the bottom foot on the floor and only pull in as far as feels good.",
+          "caution": "Ease off if you feel pinching in the knee."
+        },
+        {
+          "id": "low_lunge",
+          "name": "Low Lunge",
+          "sides": [
+            "left",
+            "right"
+          ],
+          "hold_sec_per_side": 90,
+          "cue": "Step one foot forward, back knee down on a pad. Sink your hips forward and down until you feel the front of the back hip. Stay tall through the ribs.",
+          "easier_option": "Add a folded blanket under the back knee and shorten the stance."
+        },
+        {
+          "id": "lizard",
+          "name": "Lizard",
+          "sides": [
+            "left",
+            "right"
+          ],
+          "hold_sec_per_side": 100,
+          "cue": "From low lunge, walk the front foot to the outside edge of the mat. Lower onto forearms or a block. Let the inner front hip soften.",
+          "easier_option": "Stay on your hands or place forearms on a block or bolster."
+        },
+        {
+          "id": "pigeon",
+          "name": "Pigeon",
+          "sides": [
+            "left",
+            "right"
+          ],
+          "hold_sec_per_side": 100,
+          "cue": "Bring your right shin forward, left leg extended behind. Square your hips and fold forward over the front shin. Rest on forearms or a bolster.",
+          "easier_option": "Use a folded blanket under the hip, or do reclined figure-4 instead.",
+          "caution": "Skip the fold if you feel pressure in the front knee."
+        },
+        {
+          "id": "shoelace",
+          "name": "Shoelace",
+          "sides": [
+            "left",
+            "right"
+          ],
+          "hold_sec_per_side": 100,
+          "cue": "Sit and stack your right knee over the left, feet wide. Sit tall, then walk your hands forward and fold as far as feels comfortable.",
+          "easier_option": "Sit on a folded blanket, or extend the bottom leg.",
+          "caution": "Skip the fold if either knee feels strained."
+        }
+      ],
+      "meditation": {
+        "id": "meditation",
+        "name": "Closing Meditation",
+        "duration_sec": 120,
+        "cue": "Lie back or sit comfortably. Close your eyes and let your breath settle. Notice any places you feel softer than when you started."
+      }
+    },
+    {
+      "id": "lower_back_release",
+      "name": "Lower Back Release",
+      "description": "Gentle spinal and hip release focused on the lower back.",
+      "total_sec": 1080,
+      "stretches": [
+        {
+          "id": "knee_to_chest",
+          "name": "Single Knee-to-Chest",
+          "sides": [
+            "left",
+            "right"
+          ],
+          "hold_sec_per_side": 90,
+          "cue": "Lie on your back. Hug one knee toward your chest, the other leg long on the floor. Keep the lower back heavy on the mat.",
+          "easier_option": "Bend the bottom knee and keep the foot on the floor."
+        },
+        {
+          "id": "supine_twist",
+          "name": "Supine Twist",
+          "sides": [
+            "left",
+            "right"
+          ],
+          "hold_sec_per_side": 90,
+          "cue": "Lie on your back, hug one knee, and guide it across your body. Open the opposite arm and look away from the knee. Keep both shoulders heavy.",
+          "easier_option": "Support the knee with a block or pillow."
+        },
+        {
+          "id": "reclined_figure_4",
+          "name": "Reclined Figure-4",
+          "sides": [
+            "left",
+            "right"
+          ],
+          "hold_sec_per_side": 100,
+          "cue": "Lie on your back, knees bent. Cross right ankle over left thigh. Draw the left thigh toward your chest until you feel the outer right hip. Keep your head and shoulders down.",
+          "easier_option": "Keep the bottom foot on the floor and only pull in as far as feels good.",
+          "caution": "Ease off if you feel pinching in the knee."
+        },
+        {
+          "id": "seated_half_fold",
+          "name": "Seated Half Forward Fold",
+          "sides": [
+            "left",
+            "right"
+          ],
+          "hold_sec_per_side": 100,
+          "cue": "Sit with one leg long, the other foot to the inner thigh. Round forward and let your spine hang over the extended leg.",
+          "easier_option": "Sit on a blanket and rest your hands on a block or shin. Bend the extended knee if needed."
+        },
+        {
+          "id": "open_book",
+          "name": "Open Book",
+          "sides": [
+            "left",
+            "right"
+          ],
+          "hold_sec_per_side": 100,
+          "cue": "Lie on your side, knees stacked and bent at 90 degrees. Open your top arm behind you and let your chest rotate toward the floor.",
+          "easier_option": "Place a pillow under the top knee and rest the top arm on a bolster."
+        }
+      ],
+      "meditation": {
+        "id": "meditation",
+        "name": "Closing Meditation",
+        "duration_sec": 120,
+        "cue": "Lie back or sit comfortably. Close your eyes and let your breath settle. Notice any places you feel softer than when you started."
+      }
+    },
+    {
+      "id": "glutes_hamstrings",
+      "name": "Glutes and Hamstrings",
+      "description": "Back-of-the-body release to relieve tight hips and lower back.",
+      "total_sec": 1080,
+      "stretches": [
+        {
+          "id": "seated_figure_4",
+          "name": "Seated Figure-4",
+          "sides": [
+            "left",
+            "right"
+          ],
+          "hold_sec_per_side": 90,
+          "cue": "Sit with knees bent, feet flat, hands behind you. Cross one ankle over the opposite knee and lean back or forward until you feel the outer hip.",
+          "easier_option": "Recline onto your forearms to reduce the intensity.",
+          "caution": "Ease off if you feel pinching in the knee."
+        },
+        {
+          "id": "half_split",
+          "name": "Half Split",
+          "sides": [
+            "left",
+            "right"
+          ],
+          "hold_sec_per_side": 90,
+          "cue": "From low lunge, shift your hips back over the back knee and straighten the front leg. Fold gently over the extended leg with a long spine.",
+          "easier_option": "Rest your hands on blocks and keep a small bend in the front knee."
+        },
+        {
+          "id": "reclined_hamstring",
+          "name": "Reclined Hamstring Stretch",
+          "sides": [
+            "left",
+            "right"
+          ],
+          "hold_sec_per_side": 100,
+          "cue": "Lie on your back with a strap around one foot. Raise that leg toward the ceiling and let the other leg rest long on the floor.",
+          "easier_option": "Bend the raised knee, or bend the bottom knee and keep the foot on the floor."
+        },
+        {
+          "id": "deep_lunge_quad",
+          "name": "Deep Low Lunge with Quad Reach",
+          "sides": [
+            "left",
+            "right"
+          ],
+          "hold_sec_per_side": 100,
+          "cue": "In a low lunge, reach back and hold the back foot, drawing it toward your glute. Keep the ribs down and hips square.",
+          "easier_option": "Use a strap around the back foot, or skip the reach.",
+          "caution": "Pad the back knee well."
+        },
+        {
+          "id": "sleeping_swan",
+          "name": "Sleeping Swan",
+          "sides": [
+            "left",
+            "right"
+          ],
+          "hold_sec_per_side": 100,
+          "cue": "From pigeon, fold forward and rest your forehead on your stacked forearms or a bolster. Breathe into the back of the hip.",
+          "easier_option": "Prop the hip and chest with blankets or blocks.",
+          "caution": "Skip if pigeon causes knee pressure."
+        }
+      ],
+      "meditation": {
+        "id": "meditation",
+        "name": "Closing Meditation",
+        "duration_sec": 120,
+        "cue": "Lie back or sit comfortably. Close your eyes and let your breath settle. Notice any places you feel softer than when you started."
+      }
+    },
+    {
+      "id": "deep_release",
+      "name": "Deep Release",
+      "description": "Long, quiet holds for hips and waist. Best for evenings.",
+      "total_sec": 1080,
+      "stretches": [
+        {
+          "id": "deer",
+          "name": "Deer Pose",
+          "sides": [
+            "left",
+            "right"
+          ],
+          "hold_sec_per_side": 90,
+          "cue": "Sit with your front shin parallel to the front of the mat and the back leg bent to the side. Sit tall, then fold gently over the front shin.",
+          "easier_option": "Sit on a folded blanket and keep the torso upright.",
+          "caution": "Skip if either knee feels strained."
+        },
+        {
+          "id": "dragon",
+          "name": "Dragon (Low Lunge, Knee Down)",
+          "sides": [
+            "left",
+            "right"
+          ],
+          "hold_sec_per_side": 90,
+          "cue": "Low lunge with the back knee down and the front foot wide of your hands. Sink the hips and let the back thigh soften.",
+          "easier_option": "Pad the back knee and keep the torso upright."
+        },
+        {
+          "id": "seated_side_bend",
+          "name": "Seated Side Bend",
+          "sides": [
+            "left",
+            "right"
+          ],
+          "hold_sec_per_side": 100,
+          "cue": "Sit cross-legged or with legs wide. Reach one arm overhead and lean away, lengthening the whole side of the waist.",
+          "easier_option": "Sit on a blanket and keep the bottom hand on a block."
+        },
+        {
+          "id": "sleeping_swan",
+          "name": "Sleeping Swan",
+          "sides": [
+            "left",
+            "right"
+          ],
+          "hold_sec_per_side": 100,
+          "cue": "From pigeon, fold forward and rest your forehead on your stacked forearms or a bolster. Breathe into the back of the hip.",
+          "easier_option": "Prop the hip and chest with blankets or blocks.",
+          "caution": "Skip if pigeon causes knee pressure."
+        },
+        {
+          "id": "reclined_twist",
+          "name": "Reclined Twist",
+          "sides": [
+            "left",
+            "right"
+          ],
+          "hold_sec_per_side": 100,
+          "cue": "Lie on your back, knees to one side and arms open. Relax your shoulders and let the lower back release.",
+          "easier_option": "Stack pillows under the knees so they rest higher."
+        }
+      ],
+      "meditation": {
+        "id": "meditation",
+        "name": "Closing Meditation",
+        "duration_sec": 120,
+        "cue": "Lie back or sit comfortably. Close your eyes and let your breath settle. Notice any places you feel softer than when you started."
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" fill="none"><line x1="16" y1="176" x2="224" y2="176" stroke="oklch(0.32 0.045 50)" stroke-width="1.6" opacity="0.3"/><g stroke="oklch(0.32 0.045 50)" fill="none" stroke-width="5.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="136" cy="26" r="10" fill="oklch(0.32 0.045 50)" stroke="none"/>
+      <path d="M132 38 L104 122"/>
+      <path d="M104 122 L172 96 L200 168"/>
+      <path d="M104 122 L68 148 L44 108"/>
+      <path d="M122 62 L164 92"/>
+      <path d="M122 56 L70 52 L44 108"/>
+    </g></svg>
