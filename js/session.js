@@ -10,7 +10,9 @@ export function flattenRoutine(routine) {
         name: stretch.name,
         side,
         durationSec: stretch.hold_sec_per_side,
-        cue: stretch.cue,
+        cue: stretch.cue
+          .replaceAll("{side}", side || "one")
+          .replaceAll("{otherSide}", side === "left" ? "right" : "left"),
         easier: stretch.easier_option || "",
         caution: stretch.caution || "",
       });

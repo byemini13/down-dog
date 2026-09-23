@@ -24,7 +24,7 @@
             "right"
           ],
           "hold_sec_per_side": 90,
-          "cue": "Lie on your back, knees bent. Cross right ankle over left thigh. Draw the left thigh toward your chest until you feel the outer right hip. Keep your head and shoulders down.",
+          "cue": "Lie on your back, knees bent. Cross your {side} ankle over your {otherSide} thigh. Draw the {otherSide} thigh toward your chest until you feel the outer {side} hip. Keep your head and shoulders down.",
           "easier_option": "Keep the bottom foot on the floor and only pull in as far as feels good.",
           "caution": "Ease off if you feel pinching in the knee."
         },
@@ -36,7 +36,7 @@
             "right"
           ],
           "hold_sec_per_side": 90,
-          "cue": "Step one foot forward, back knee down on a pad. Sink your hips forward and down until you feel the front of the back hip. Stay tall through the ribs.",
+          "cue": "Step your {side} foot forward, {otherSide} knee down on a pad. Sink your hips forward and down until you feel the front of the back hip. Stay tall through the ribs.",
           "easier_option": "Add a folded blanket under the back knee and shorten the stance."
         },
         {
@@ -47,7 +47,7 @@
             "right"
           ],
           "hold_sec_per_side": 100,
-          "cue": "From low lunge, walk the front foot to the outside edge of the mat. Lower onto forearms or a block. Let the inner front hip soften.",
+          "cue": "From low lunge with your {side} foot forward, walk that foot to the outside edge of the mat. Lower onto forearms or a block. Let the inner front hip soften.",
           "easier_option": "Stay on your hands or place forearms on a block or bolster."
         },
         {
@@ -58,7 +58,7 @@
             "right"
           ],
           "hold_sec_per_side": 100,
-          "cue": "Bring your right shin forward, left leg extended behind. Square your hips and fold forward over the front shin. Rest on forearms or a bolster.",
+          "cue": "Bring your {side} shin forward, {otherSide} leg extended behind. Square your hips and fold forward over the front shin. Rest on forearms or a bolster.",
           "easier_option": "Use a folded blanket under the hip, or do reclined figure-4 instead.",
           "caution": "Skip the fold if you feel pressure in the front knee."
         },
@@ -70,7 +70,7 @@
             "right"
           ],
           "hold_sec_per_side": 100,
-          "cue": "Sit and stack your right knee over the left, feet wide. Sit tall, then walk your hands forward and fold as far as feels comfortable.",
+          "cue": "Sit and stack your {side} knee over the {otherSide}, feet wide. Sit tall, then walk your hands forward and fold as far as feels comfortable.",
           "easier_option": "Sit on a folded blanket, or extend the bottom leg.",
           "caution": "Skip the fold if either knee feels strained."
         }
@@ -96,7 +96,7 @@
             "right"
           ],
           "hold_sec_per_side": 90,
-          "cue": "Lie on your back. Hug one knee toward your chest, the other leg long on the floor. Keep the lower back heavy on the mat.",
+          "cue": "Lie on your back. Hug your {side} knee toward your chest, the {otherSide} leg long on the floor. Keep the lower back heavy on the mat.",
           "easier_option": "Bend the bottom knee and keep the foot on the floor."
         },
         {
@@ -107,7 +107,7 @@
             "right"
           ],
           "hold_sec_per_side": 90,
-          "cue": "Lie on your back, hug one knee, and guide it across your body. Open the opposite arm and look away from the knee. Keep both shoulders heavy.",
+          "cue": "Lie on your back, hug your {side} knee, and guide it across your body toward the {otherSide}. Open your {side} arm and look away from the knee. Keep both shoulders heavy.",
           "easier_option": "Support the knee with a block or pillow."
         },
         {
@@ -118,7 +118,7 @@
             "right"
           ],
           "hold_sec_per_side": 100,
-          "cue": "Lie on your back, knees bent. Cross right ankle over left thigh. Draw the left thigh toward your chest until you feel the outer right hip. Keep your head and shoulders down.",
+          "cue": "Lie on your back, knees bent. Cross your {side} ankle over your {otherSide} thigh. Draw the {otherSide} thigh toward your chest until you feel the outer {side} hip. Keep your head and shoulders down.",
           "easier_option": "Keep the bottom foot on the floor and only pull in as far as feels good.",
           "caution": "Ease off if you feel pinching in the knee."
         },
@@ -130,7 +130,7 @@
             "right"
           ],
           "hold_sec_per_side": 100,
-          "cue": "Sit with one leg long, the other foot to the inner thigh. Round forward and let your spine hang over the extended leg.",
+          "cue": "Sit with your {side} leg long, the {otherSide} foot to the inner thigh. Fold gently forward over the extended leg.",
           "easier_option": "Sit on a blanket and rest your hands on a block or shin. Bend the extended knee if needed."
         },
         {
@@ -141,7 +141,7 @@
             "right"
           ],
           "hold_sec_per_side": 100,
-          "cue": "Lie on your side, knees stacked and bent at 90 degrees. Open your top arm behind you and let your chest rotate toward the floor.",
+          "cue": "Lie on your {otherSide} side, knees stacked and bent at 90 degrees. Open your {side} arm behind you toward the floor and let your chest turn toward the ceiling. Keep your knees together.",
           "easier_option": "Place a pillow under the top knee and rest the top arm on a bolster."
         }
       ],
@@ -166,7 +166,7 @@
             "right"
           ],
           "hold_sec_per_side": 90,
-          "cue": "Sit with knees bent, feet flat, hands behind you. Cross one ankle over the opposite knee and lean back or forward until you feel the outer hip.",
+          "cue": "Sit with knees bent, feet flat, hands behind you. Cross your {side} ankle over your {otherSide} knee and lean back or forward until you feel the outer hip.",
           "easier_option": "Recline onto your forearms to reduce the intensity.",
           "caution": "Ease off if you feel pinching in the knee."
         },
@@ -178,7 +178,7 @@
             "right"
           ],
           "hold_sec_per_side": 90,
-          "cue": "From low lunge, shift your hips back over the back knee and straighten the front leg. Fold gently over the extended leg with a long spine.",
+          "cue": "From low lunge with your {side} foot forward, shift your hips back over the back knee and straighten the front leg. Fold gently over the extended leg with a long spine.",
           "easier_option": "Rest your hands on blocks and keep a small bend in the front knee."
         },
         {
@@ -189,7 +189,7 @@
             "right"
           ],
           "hold_sec_per_side": 100,
-          "cue": "Lie on your back with a strap around one foot. Raise that leg toward the ceiling and let the other leg rest long on the floor.",
+          "cue": "Lie on your back with a strap around your {side} foot. Raise that leg toward the ceiling and let the {otherSide} leg rest long on the floor.",
           "easier_option": "Bend the raised knee, or bend the bottom knee and keep the foot on the floor."
         },
         {
@@ -200,7 +200,7 @@
             "right"
           ],
           "hold_sec_per_side": 100,
-          "cue": "In a low lunge, reach back and hold the back foot, drawing it toward your glute. Keep the ribs down and hips square.",
+          "cue": "In a low lunge with your {side} foot forward, reach back and hold your {otherSide} foot, drawing it toward your glute. Keep the ribs down and hips square.",
           "easier_option": "Use a strap around the back foot, or skip the reach.",
           "caution": "Pad the back knee well."
         },
@@ -212,7 +212,7 @@
             "right"
           ],
           "hold_sec_per_side": 100,
-          "cue": "From pigeon, fold forward and rest your forehead on your stacked forearms or a bolster. Breathe into the back of the hip.",
+          "cue": "From pigeon with your {side} shin forward, fold forward and rest your forehead on your stacked forearms or a bolster. Breathe into the back of the hip.",
           "easier_option": "Prop the hip and chest with blankets or blocks.",
           "caution": "Skip if pigeon causes knee pressure."
         }
@@ -238,7 +238,7 @@
             "right"
           ],
           "hold_sec_per_side": 90,
-          "cue": "Sit with your front shin parallel to the front of the mat and the back leg bent to the side. Sit tall, then fold gently over the front shin.",
+          "cue": "Sit with your {side} shin in front of you and your {otherSide} leg bent to the side. Sit tall, then fold gently over the front shin.",
           "easier_option": "Sit on a folded blanket and keep the torso upright.",
           "caution": "Skip if either knee feels strained."
         },
@@ -250,7 +250,7 @@
             "right"
           ],
           "hold_sec_per_side": 90,
-          "cue": "Low lunge with the back knee down and the front foot wide of your hands. Sink the hips and let the back thigh soften.",
+          "cue": "Low lunge with your {otherSide} knee down and your {side} foot wide of your hands. Sink the hips and let the back thigh soften.",
           "easier_option": "Pad the back knee and keep the torso upright."
         },
         {
@@ -261,7 +261,7 @@
             "right"
           ],
           "hold_sec_per_side": 100,
-          "cue": "Sit cross-legged or with legs wide. Reach one arm overhead and lean away, lengthening the whole side of the waist.",
+          "cue": "Sit cross-legged or with legs wide. Reach your {side} arm overhead and lean toward the {otherSide}, lengthening the whole {side} waist.",
           "easier_option": "Sit on a blanket and keep the bottom hand on a block."
         },
         {
@@ -272,7 +272,7 @@
             "right"
           ],
           "hold_sec_per_side": 100,
-          "cue": "From pigeon, fold forward and rest your forehead on your stacked forearms or a bolster. Breathe into the back of the hip.",
+          "cue": "From pigeon with your {side} shin forward, fold forward and rest your forehead on your stacked forearms or a bolster. Breathe into the back of the hip.",
           "easier_option": "Prop the hip and chest with blankets or blocks.",
           "caution": "Skip if pigeon causes knee pressure."
         },
@@ -284,7 +284,7 @@
             "right"
           ],
           "hold_sec_per_side": 100,
-          "cue": "Lie on your back, knees to one side and arms open. Relax your shoulders and let the lower back release.",
+          "cue": "Lie on your back, knees together and resting toward the {side}, arms open. Relax your shoulders and let the lower back release.",
           "easier_option": "Stack pillows under the knees so they rest higher."
         }
       ],

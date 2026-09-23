@@ -1,0 +1,9 @@
+{
+  "name": "down-dog",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "build:audio": "node scripts/build_audio.mjs"
+  }
+}

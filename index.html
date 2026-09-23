@@ -28,7 +28,7 @@
         </div>
         <footer class="home-foot">
           <p class="note" id="home-note">
-            Phone on the mat, screen awake, ringer on. Sounds will not play if the silent switch is down.
+            Phone on the mat, screen awake, volume up. Each new hold begins with a chime and spoken instructions.
           </p>
           <p class="note install" id="install-tip">
             In Safari, tap Share, then Add to Home Screen.
@@ -50,6 +50,7 @@
             <img id="pose-image" alt="" />
           </div>
           <div class="pulse" id="pose-pulse" hidden></div>
+          <p class="pose-caption">Position guide · follow your side below</p>
         </div>
         <div class="session-copy">
           <div class="pose-heading">
@@ -63,7 +64,9 @@
           <p class="caution" id="session-caution" hidden></p>
         </div>
         <div class="session-actions">
+          <p class="audio-status" id="audio-status" role="status" hidden></p>
           <button type="button" class="btn-primary" id="btn-pause">Pause</button>
+          <button type="button" class="btn-text" id="btn-replay">Replay instructions</button>
           <button type="button" class="btn-text" id="btn-skip">Skip this hold</button>
           <button type="button" class="btn-text danger" id="btn-end">End practice</button>
         </div>
