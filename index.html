@@ -25,6 +25,24 @@
           <p class="eyebrow">Up next</p>
           <h1 id="home-name"></h1>
           <p class="lede" id="home-desc"></p>
+          <section class="practice-summary" aria-labelledby="practice-heading">
+            <h2 id="practice-heading">Your practice</h2>
+            <dl class="practice-stats">
+              <div><dt>Day streak</dt><dd data-stat="streak">0</dd></div>
+              <div><dt>Past 7 days</dt><dd data-stat="lastSevenDays">0</dd></div>
+              <div><dt>Completed</dt><dd data-stat="total">0</dd></div>
+            </dl>
+            <ol class="practice-week" id="practice-week" aria-label="Completions over the past seven days"></ol>
+            <p class="practice-note" id="streak-note"></p>
+            <details class="practice-history">
+              <summary>Recent sessions</summary>
+              <p class="practice-note" id="best-streak"></p>
+              <p class="practice-note" id="history-empty">Completed sessions will appear here.</p>
+              <ol id="history-list" class="history-list"></ol>
+              <p class="practice-note" id="tracking-note">Saved on this device. Clearing website data removes your history.</p>
+            </details>
+            <p class="tracking-error" id="tracking-error" role="status" hidden></p>
+          </section>
         </div>
         <footer class="home-foot">
           <p class="note" id="home-note">
@@ -74,9 +92,17 @@
 
       <section id="screen-done" class="screen screen-done" data-screen="done" hidden>
         <p class="wordmark">Down Dog</p>
-        <p class="eyebrow">Session complete</p>
+        <p class="eyebrow" id="done-heading">Session complete</p>
         <h1 id="done-name"></h1>
+        <p class="lede" id="done-summary" role="status"></p>
+        <dl class="practice-stats done-stats">
+          <div><dt>Day streak</dt><dd data-stat="streak">0</dd></div>
+          <div><dt>Past 7 days</dt><dd data-stat="lastSevenDays">0</dd></div>
+          <div><dt>Completed</dt><dd data-stat="total">0</dd></div>
+        </dl>
         <p class="lede" id="done-next"></p>
+        <p class="audio-status" id="done-audio-status" role="status" hidden></p>
+        <button type="button" class="btn-text" id="btn-replay-ending">Replay ending</button>
         <button type="button" class="btn-primary done-back" id="btn-home">Back to the start</button>
       </section>
     </div>

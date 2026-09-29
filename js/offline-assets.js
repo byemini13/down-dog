@@ -19,6 +19,7 @@ self.OFFLINE_MEDIA = [
   "./poses/seated_side_bend.webp",
   "./poses/reclined_twist.webp",
   "./poses/meditation.webp",
+  "./audio/00e05959c7f5.m4a",
   "./audio/b93d49016f08.m4a",
   "./audio/aae4995b6246.m4a",
   "./audio/db7de776864e.m4a",

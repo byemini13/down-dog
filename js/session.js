@@ -81,6 +81,7 @@ export class SessionClock {
     this.paused = false;
     this.stopped = false;
     this.timer = 0;
+    this.skippedSteps = 0;
   }
 
   start(steps) {
@@ -89,6 +90,7 @@ export class SessionClock {
     this.index = 0;
     this.paused = false;
     this.stopped = false;
+    this.skippedSteps = 0;
     this.beginStep(0);
     this.loop();
   }
@@ -109,7 +111,7 @@ export class SessionClock {
 
   skip() {
     if (this.stopped) return;
-    this.advance();
+    this.advance({ skipped: true });
   }
 
   stop() {
@@ -128,12 +130,14 @@ export class SessionClock {
     this.emitTick();
   }
 
-  advance() {
+  advance({ skipped = false } = {}) {
+    if (this.stopped) return;
+    if (skipped) this.skippedSteps += 1;
     const next = this.index + 1;
     if (next >= this.steps.length) {
       this.stopped = true;
       this.stopTimer();
-      this.onComplete?.();
+      this.onComplete?.({ endedNaturally: !skipped, skippedSteps: this.skippedSteps });
       return;
     }
     this.beginStep(next);

@@ -15,16 +15,22 @@ Eighteen-minute hip and back holds. Open it on your iPhone, put the phone on the
 - Leave the phone on the mat with the **screen on**. Locking the phone or switching apps pauses the timer.
 - Turn the **media volume up** and check your selected speaker or headphones.
 - You will hear a chime, then a description, each time the stretch changes or it is time to switch sides.
+- When the two-minute closing meditation finishes, a chime and a spoken completion cue let you know practice is over.
 - Use **Replay instructions** whenever you need to hear the current position again. If playback is blocked or interrupted, the app shows a message beside this control.
 
 ## How a session works
 
-There are four routines, each exactly 18 minutes (five two-sided holds plus a two-minute closing meditation):
+There are seven routines, each exactly 18 minutes (five two-sided holds plus a two-minute closing meditation):
 
 1. Hip Opener
 2. Lower Back Release
 3. Glutes and Hamstrings
 4. Deep Release
+5. Hamstring Reset
+6. Hips and Hamstrings
+7. Evening Unwind
+
+Each of the three new routines includes at least two hamstring stretches, using half split, seated half forward fold, or reclined hamstring stretch.
 
 The home screen shows the upcoming routine. Tapping **Begin** starts that one and rotates to the next for the following session.
 
@@ -33,6 +39,16 @@ During a hold you get a full-body studio-style position guide, the side (left or
 Switching apps or locking the screen pauses the timer and sound. Tap **Resume practice** when you return; the current instructions repeat. Skipping while paused changes the hold without starting sound.
 
 Voice cues are bundled recordings, with the chime and speech in the same file. The app caches all images and recordings for offline use after its initial download. Safari audio byte-range requests are supported by the offline cache.
+
+## Track your practice
+
+The home screen shows your daily streak, completed sessions over the past seven calendar days, and total completed sessions. The seven-day row marks days you practiced. Open **Recent sessions** for your last ten completions and best streak.
+
+A session counts when the closing meditation's timer finishes, even if you skipped an earlier stretch. **End practice** and skipping the closing meditation do not add a completion. **Replay ending**, reloading, and revisiting the completion screen never add another session.
+
+Streaks count consecutive local calendar days. More than one session in a day increases your total but counts as one streak day. A streak that ended yesterday remains current until today ends; missing a whole day resets it.
+
+Tracking starts with this update and is stored only in this browser on this device, including offline. Earlier sessions cannot be reconstructed. Clearing website data removes the history; it does not sync to other devices or browsers. If storage is blocked or full, practice and sound still work, and the app tells you that the session could not be saved.
 
 ## Edit the routines
 
@@ -47,6 +63,8 @@ npm run build:audio
 node scripts/build_offline.mjs
 npm test
 ```
+
+Unchanged voice recordings are reused. Pass `-- --force` to `npm run build:audio` if you need to regenerate all of them. The ending announcement text lives in `js/messages.js`.
 
 Commit the resulting `audio/`, `js/cues.js`, and `js/offline-assets.js` files along with your changes. Bump the cache version in `sw.js` when shipping updated assets. No build tools are needed to serve the app.
 

@@ -48,3 +48,50 @@ test('automatic transitions fire once, and pausing preserves time across interru
   t.mock.timers.tick(10000);
   assert.equal(completed, 1);
 });
+
+test('seven routines remain 18 minutes and every new routine includes at least two hamstring stretches', () => {
+  assert.equal(routines.length, 7);
+  assert.equal(new Set(routines.map(routine => routine.id)).size, 7);
+  const hamstrings = new Set(['half_split', 'seated_half_fold', 'reclined_hamstring']);
+  for (const routine of routines.slice(4)) {
+    assert.ok(routine.stretches.filter(stretch => hamstrings.has(stretch.id)).length >= 2, routine.name);
+    assert.equal(routine.meditation.duration_sec, 120);
+    assert.equal(flattenRoutine(routine).reduce((sum, step) => sum + step.durationSec, 0), 1080);
+  }
+});
+
+test('the full two-minute meditation triggers natural completion exactly once', (t) => {
+  t.mock.timers.enable({ apis: ['Date', 'setInterval'] });
+  globalThis.window = { setInterval, clearInterval };
+  const completions = [];
+  const clock = new SessionClock({ onComplete: result => completions.push(result) });
+  clock.start(flattenRoutine(routines[0]).slice(-1));
+  t.mock.timers.tick(119800);
+  assert.equal(completions.length, 0);
+  t.mock.timers.tick(200);
+  assert.deepEqual(completions, [{ endedNaturally: true, skippedSteps: 0 }]);
+  clock.skip();
+  clock.advance();
+  t.mock.timers.tick(120000);
+  assert.equal(completions.length, 1);
+});
+
+test('skipping the meditation and ending early are distinct from timed completion', (t) => {
+  t.mock.timers.enable({ apis: ['Date', 'setInterval'] });
+  globalThis.window = { setInterval, clearInterval };
+  const completions = [];
+  const clock = new SessionClock({ onComplete: result => completions.push(result) });
+  const steps = flattenRoutine(routines[0]).slice(-2);
+  clock.start(steps);
+  clock.skip();
+  t.mock.timers.tick(120000);
+  assert.deepEqual(completions[0], { endedNaturally: true, skippedSteps: 1 });
+  clock.start(steps);
+  clock.skip();
+  clock.skip();
+  assert.deepEqual(completions[1], { endedNaturally: false, skippedSteps: 2 });
+  clock.start(steps);
+  clock.stop();
+  t.mock.timers.tick(200000);
+  assert.equal(completions.length, 2);
+});
