@@ -95,6 +95,35 @@
         <p class="eyebrow" id="done-heading">Session complete</p>
         <h1 id="done-name"></h1>
         <p class="lede" id="done-summary" role="status"></p>
+        <form id="check-in" class="check-in" hidden>
+          <fieldset>
+            <legend>Healthy diet?</legend>
+            <div class="answer-options">
+              <label><input type="radio" name="healthyDiet" value="yes" required /> Yes</label>
+              <label><input type="radio" name="healthyDiet" value="no" required /> No</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>No procrastination?</legend>
+            <div class="answer-options">
+              <label><input type="radio" name="noProcrastination" value="yes" required /> Yes</label>
+              <label><input type="radio" name="noProcrastination" value="no" required /> No</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Rate the day</legend>
+            <p class="practice-note" id="rating-hint">1 to 5 · lowest to highest</p>
+            <div class="answer-options rating-options" aria-describedby="rating-hint">
+              <label><input type="radio" name="dayRating" value="1" required /> 1</label>
+              <label><input type="radio" name="dayRating" value="2" required /> 2</label>
+              <label><input type="radio" name="dayRating" value="3" required /> 3</label>
+              <label><input type="radio" name="dayRating" value="4" required /> 4</label>
+              <label><input type="radio" name="dayRating" value="5" required /> 5</label>
+            </div>
+          </fieldset>
+          <p id="check-in-error" class="tracking-error" role="status" hidden></p>
+          <button type="submit" class="btn-primary" id="btn-save-session">Complete session</button>
+        </form>
         <dl class="practice-stats done-stats">
           <div><dt>Day streak</dt><dd data-stat="streak">0</dd></div>
           <div><dt>Past 7 days</dt><dd data-stat="lastSevenDays">0</dd></div>

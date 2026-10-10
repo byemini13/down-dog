@@ -12,7 +12,7 @@ function storage() {
   };
 }
 function entry(day, id = day) {
-  return { id, routineId: 'hamstring_reset', routineName: 'Hamstring Reset', completedAt: `${day}T18:00:00.000Z`, day };
+  return { id, routineId: 'hamstring_reset', routineName: 'Hamstring Reset', completedAt: `${day}T18:00:00.000Z`, day, answers: { healthyDiet: true, noProcrastination: true, dayRating: 3 } };
 }
 const now = new Date(2026, 8, 29, 12);
 
@@ -93,4 +93,69 @@ test('bad entries cannot destroy valid history, and inaccessible storage reports
   assert.equal(readCompletions(blocked).available, false);
   const quota = { getItem: () => null, setItem: () => { throw new Error('quota'); } };
   assert.equal(recordCompletion(entry('2026-09-29'), quota), false);
+});
+
+
+test('all three answers are required to save or count toward a streak', () => {
+  const data = storage();
+  const complete = entry('2026-09-29');
+  for (const answers of [undefined, {}, { healthyDiet: true, noProcrastination: false },
+    { healthyDiet: null, noProcrastination: true, dayRating: 3 },
+    ...[0, 6, 1.5, '3'].map(dayRating => ({ healthyDiet: true, noProcrastination: false, dayRating }))]) {
+    const incomplete = { ...complete, answers };
+    assert.equal(recordCompletion(incomplete, data), false);
+    assert.equal(completionStats([incomplete], now).streak, 0);
+  }
+  for (const dayRating of [1, 5]) {
+    assert.equal(recordCompletion({ ...complete, id: `rating-${dayRating}`,
+      answers: { healthyDiet: false, noProcrastination: false, dayRating } }, data), true);
+  }
+  assert.equal(completionStats(readCompletions(data).sessions, now).streak, 0);
+});
+
+test('legacy history stays visible without counting toward new streaks', () => {
+  const data = storage();
+  const legacy = entry('2026-09-28');
+  delete legacy.answers;
+  data.setItem(COMPLETION_PREFIX + legacy.id, JSON.stringify(legacy));
+  recordCompletion(entry('2026-09-29'), data);
+  const sessions = readCompletions(data).sessions;
+  assert.equal(sessions.length, 2);
+  const stats = completionStats(sessions, now);
+  assert.equal(stats.total, 2);
+  assert.equal(stats.streak, 1);
+  assert.equal(stats.bestStreak, 1);
+});
+
+
+test('either No breaks a streak immediately, even with a Yes session on the same day', () => {
+  for (const answers of [
+    { healthyDiet: false, noProcrastination: true, dayRating: 5 },
+    { healthyDiet: true, noProcrastination: false, dayRating: 5 },
+    { healthyDiet: false, noProcrastination: false, dayRating: 1 },
+  ]) {
+    const sessions = [entry('2026-09-27'), entry('2026-09-28'),
+      { ...entry('2026-09-29', 'no'), answers }, entry('2026-09-29', 'yes')];
+    for (const order of [sessions, [...sessions].reverse()]) {
+      const stats = completionStats(order, now);
+      assert.equal(stats.streak, 0);
+      assert.equal(stats.streakBrokenToday, true);
+      assert.equal(stats.bestStreak, 2);
+      assert.equal(stats.total, 4);
+      assert.equal(stats.lastSevenDays, 4);
+      assert.equal(stats.completedToday, true);
+      assert.equal(completionStats(order, new Date(2026, 8, 30, 12)).streak, 0);
+      const restarted = completionStats([...order, entry('2026-09-30')], new Date(2026, 8, 30, 12));
+      assert.equal(restarted.streak, 1);
+      assert.equal(restarted.streakBrokenToday, false);
+    }
+  }
+});
+
+test('any day rating keeps a streak when both answers are Yes', () => {
+  for (const dayRating of [1, 2, 3, 4, 5]) {
+    const session = entry('2026-09-29');
+    session.answers.dayRating = dayRating;
+    assert.equal(completionStats([entry('2026-09-28'), session], now).streak, 2);
+  }
 });

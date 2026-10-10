@@ -19,6 +19,12 @@ function validCompletion(value) {
     typeof value.completedAt === "string" && Number.isFinite(Date.parse(value.completedAt));
 }
 
+export function validAnswers(answers) {
+  return answers != null && typeof answers.healthyDiet === "boolean" &&
+    typeof answers.noProcrastination === "boolean" &&
+    Number.isInteger(answers.dayRating) && answers.dayRating >= 1 && answers.dayRating <= 5;
+}
+
 export function readCompletions(storage) {
   const sessions = [];
   try {
@@ -42,7 +48,7 @@ export function readCompletions(storage) {
 }
 
 export function recordCompletion(record, storage) {
-  if (!validCompletion(record)) return false;
+  if (!validCompletion(record) || !validAnswers(record.answers)) return false;
   try {
     storage ??= window.localStorage;
     const key = COMPLETION_PREFIX + record.id;
@@ -59,11 +65,14 @@ export function completionStats(sessions, now = new Date()) {
   const today = dayNumber(localDay(now));
   const valid = sessions.filter(validCompletion);
   const counts = new Map();
+  const brokenDays = new Set();
   for (const session of valid) {
+    if (!validAnswers(session.answers)) continue;
     const day = dayNumber(session.day);
     counts.set(day, (counts.get(day) || 0) + 1);
+    if (!session.answers.healthyDiet || !session.answers.noProcrastination) brokenDays.add(day);
   }
-  const days = [...counts.keys()].filter(day => day <= today).sort((a, b) => a - b);
+  const days = [...counts.keys()].filter(day => day <= today && !brokenDays.has(day)).sort((a, b) => a - b);
   let bestStreak = 0;
   let run = 0;
   let previous = -Infinity;
@@ -73,7 +82,7 @@ export function completionStats(sessions, now = new Date()) {
     previous = day;
   }
   const latest = days.at(-1);
-  const streak = latest >= today - 1 ? run : 0;
+  const streak = latest >= today - 1 && !brokenDays.has(today) ? run : 0;
   const week = Array.from({ length: 7 }, (_, index) => {
     const number = today - 6 + index;
     return { day: new Date(number * 86_400_000).toISOString().slice(0, 10), count: counts.get(number) || 0 };
@@ -84,6 +93,7 @@ export function completionStats(sessions, now = new Date()) {
     streak,
     bestStreak,
     completedToday: counts.has(today),
+    streakBrokenToday: brokenDays.has(today),
     week,
   };
 }

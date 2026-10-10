@@ -2,7 +2,7 @@ import { flattenRoutine, SessionClock, speechForStep, formatClock } from "./sess
 import { prepareAnnouncement, announce, cancelAnnouncement, setAudioStatusHandler } from "./audio.js";
 import { poseUrl } from "./poses.js";
 import { COMPLETION_CUE } from "./messages.js";
-import { COMPLETION_PREFIX, localDay, readCompletions, recordCompletion, completionStats } from "./history.js";
+import { COMPLETION_PREFIX, localDay, readCompletions, recordCompletion, completionStats, validAnswers } from "./history.js";
 
 const INDEX_KEY = "downdog.nextRoutineIndex";
 const TIP_KEY = "downdog.seenInstallTip";
@@ -53,6 +53,9 @@ let wakeRequest = 0;
 let pulseTimer = 0;
 let activeSessionId = null;
 let lastSaveFailed = false;
+let pendingCompletion = null;
+const checkIn = document.getElementById("check-in");
+const checkInError = document.getElementById("check-in-error");
 let memoryIndex = 0;
 
 const clock = new SessionClock({
@@ -108,9 +111,11 @@ function renderProgress() {
     return item;
   });
   document.getElementById("practice-week").replaceChildren(...week);
-  document.getElementById("streak-note").textContent = stats.completedToday
+  document.getElementById("streak-note").textContent = stats.streakBrokenToday
+    ? "A No answer broke your streak today. Start again tomorrow."
+    : stats.completedToday
     ? "Today's practice is logged."
-    : stats.streak ? "Complete a session today to continue your streak." : "Your next completed session starts a streak.";
+    : stats.streak ? "Complete a session and answer Yes to both questions today to continue your streak." : "Complete a session with two Yes answers to start a streak.";
   document.getElementById("best-streak").textContent = `Best streak: ${stats.bestStreak} day${stats.bestStreak === 1 ? "" : "s"}.`;
   document.getElementById("history-empty").hidden = sessions.length > 0;
   document.getElementById("history-list").replaceChildren(...sessions.slice(0, 10).map((session) => {
@@ -132,6 +137,7 @@ function renderProgress() {
 }
 
 function renderHome() {
+  pendingCompletion = null;
   upcomingIndex = readIndex();
   const routine = routines[upcomingIndex];
   homeName.textContent = routine.name;
@@ -278,30 +284,62 @@ function finishSession({ endedNaturally }) {
   const sessionId = activeSessionId;
   activeSessionId = null;
   cancelAnnouncement();
-  const completedAt = new Date();
-  if (endedNaturally) {
-    lastSaveFailed = !recordCompletion({
-      id: sessionId,
-      routineId: activeRoutine.id,
-      routineName: activeRoutine.name,
-      completedAt: completedAt.toISOString(),
-      day: localDay(completedAt),
-    });
-  }
-  const stats = renderProgress();
+  pendingCompletion = endedNaturally ? {
+    id: sessionId,
+    routineId: activeRoutine.id,
+    routineName: activeRoutine.name,
+  } : null;
+  checkIn.reset();
+  checkIn.hidden = !endedNaturally;
+  checkInError.hidden = true;
+  document.getElementById("btn-save-session").textContent = "Complete session";
+  renderProgress();
   const next = routines[readIndex()];
   doneName.textContent = activeRoutine.name;
   doneNext.textContent = `Next time: ${next.name}.`;
-  document.getElementById("done-heading").textContent = endedNaturally ? "Session complete" : "Practice ended";
+  document.getElementById("done-heading").textContent = endedNaturally ? "One last check-in" : "Practice ended";
   document.getElementById("done-summary").textContent = !endedNaturally
     ? "The closing meditation was skipped, so this session wasn't added to your history."
-    : lastSaveFailed ? "Practice complete. Your session could not be saved on this device."
-    : `Session saved. ${stats.streak === 1 ? "Your streak starts today." : `You're on a ${stats.streak}-day streak.`}`;
+    : "Answer all three questions to complete your session. Both Yes answers keep your streak; either No breaks it.";
   document.getElementById("btn-replay-ending").hidden = !endedNaturally;
   showScreen("done");
-  if (endedNaturally) announce(COMPLETION_CUE);
+  if (endedNaturally) {
+    announce(COMPLETION_CUE);
+    checkIn.querySelector("input").focus();
+  }
   releaseWakeLock();
 }
+
+checkIn.addEventListener("submit", (event) => {
+  event.preventDefault();
+  if (!pendingCompletion) return;
+  const data = new FormData(checkIn);
+  const answers = {
+    healthyDiet: data.has("healthyDiet") ? data.get("healthyDiet") === "yes" : null,
+    noProcrastination: data.has("noProcrastination") ? data.get("noProcrastination") === "yes" : null,
+    dayRating: Number(data.get("dayRating")),
+  };
+  if (!validAnswers(answers)) return;
+  const completedAt = new Date();
+  lastSaveFailed = !recordCompletion({
+    ...pendingCompletion,
+    answers,
+    completedAt: completedAt.toISOString(),
+    day: localDay(completedAt),
+  });
+  const stats = renderProgress();
+  checkInError.hidden = !lastSaveFailed;
+  if (lastSaveFailed) {
+    checkInError.textContent = "Your session could not be saved. Allow website storage, then try again.";
+    document.getElementById("btn-save-session").textContent = "Try saving again";
+    return;
+  }
+  pendingCompletion = null;
+  checkIn.hidden = true;
+  document.getElementById("done-heading").textContent = "Session complete";
+  document.getElementById("done-summary").textContent = `Session saved. ${stats.streakBrokenToday ? "A No answer broke your streak today. Start again tomorrow." : stats.streak === 1 ? "Your streak starts today." : `You're on a ${stats.streak}-day streak.`}`;
+  document.getElementById("btn-home").focus();
+});
 
 document.getElementById("btn-start").addEventListener("click", startSession);
 btnPause.addEventListener("click", pauseOrResume);

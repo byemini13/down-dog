@@ -1,5 +1,5 @@
 importScripts("./js/offline-assets.js");
-const CACHE = "downdog-v6";
+const CACHE = "downdog-v7";
 const ASSETS = [
   "./", "./index.html", "./routines.json", "./css/app.css",
   "./js/app.js", "./js/session.js", "./js/audio.js", "./js/cues.js",

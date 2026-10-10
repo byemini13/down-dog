@@ -538,3 +538,56 @@ button:focus-visible {
     transform: none;
   }
 }
+
+.check-in {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.check-in fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0 0 1.25rem;
+  min-width: 0;
+}
+
+.check-in legend {
+  padding: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.answer-options {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.answer-options label {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-height: 2.9rem;
+  border: 1px solid var(--ink-faint);
+  cursor: pointer;
+}
+
+.answer-options label:has(input:checked) {
+  border-color: var(--oxide);
+  background: var(--paper-deep);
+}
+
+.answer-options label:has(input:focus-visible) {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.answer-options input {
+  accent-color: var(--oxide);
+  margin: 0;
+}
+
+.check-in .btn-primary {
+  width: 100%;
+}

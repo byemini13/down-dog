@@ -44,9 +44,11 @@ Voice cues are bundled recordings, with the chime and speech in the same file. T
 
 The home screen shows your daily streak, completed sessions over the past seven calendar days, and total completed sessions. The seven-day row marks days you practiced. Open **Recent sessions** for your last ten completions and best streak.
 
-A session counts when the closing meditation's timer finishes, even if you skipped an earlier stretch. **End practice** and skipping the closing meditation do not add a completion. **Replay ending**, reloading, and revisiting the completion screen never add another session.
+After the closing meditation finishes, answer **Healthy diet?** (Yes/No), **No procrastination?** (Yes/No), and **Rate the day** (1–5), then tap **Complete session**. All three answers are required to save the session. Both Yes answers count toward your streak; either No answer breaks it immediately. The day rating does not affect the streak. Earlier stretches can be skipped. **End practice** and skipping the closing meditation do not add a completion. **Replay ending**, reloading, and revisiting the completion screen never add another session.
 
-Streaks count consecutive local calendar days. More than one session in a day increases your total but counts as one streak day. A streak that ended yesterday remains current until today ends; missing a whole day resets it.
+Existing history stays visible, but sessions saved before the check-in was added do not count toward streaks. Leaving the check-in without submitting does not save a completion.
+
+Streaks count consecutive local calendar days. More than one session in a day increases your total but counts as one streak day. A No answer in any session breaks the streak for that entire day, even if another session has two Yes answers. You can start a new streak the following day. Sessions with No answers still appear in history and completion totals. A streak that ended yesterday remains current until today ends; missing a whole day resets it.
 
 Tracking starts with this update and is stored only in this browser on this device, including offline. Earlier sessions cannot be reconstructed. Clearing website data removes the history; it does not sync to other devices or browsers. If storage is blocked or full, practice and sound still work, and the app tells you that the session could not be saved.
 
