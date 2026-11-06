@@ -4,6 +4,8 @@ Eighteen-minute hip and back holds. Open it on your iPhone, put the phone on the
 
 **Use it here:** [https://byemini13.github.io/down-dog/](https://byemini13.github.io/down-dog/)
 
+**Planned improvements:** [Product roadmap](ROADMAP.md)
+
 ## Add it to your iPhone
 
 1. Open the link in **Safari** (not Chrome).
